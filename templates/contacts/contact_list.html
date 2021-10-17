@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'contacts/base.html' %}
+{% load auth_extras %}
+{% block content %}
+    <h2>Welcome to Contacts!</h2>
+    {% if contact_list %}
+        <table class="table">
+            <th>Record ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            {% if request.user|has_group:"Admin" or request.user.is_superuser %}
+                <th>Action</th>
+            {% endif %}
+        {% for contact in contact_list %}
+            <tr>
+                <td> {{ contact.pk }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                {% if request.user|has_group:"Admin" or request.user.is_superuser %}
+                <td><a class="btn btn-danger" href={% url 'contacts:delete_contact' pk=contact.pk%}>Delete</a>
+                {% endif %}
+            </td>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>Contacts list is empty</p>
+    {% endif %}
+    {% if not request.user|has_group:"Viewer" %}
+        <p><a class="btn btn-primary" href={% url 'contacts:create_contact' %}>Create new contact</a></p>
+    {% endif %}
+{% endblock %}

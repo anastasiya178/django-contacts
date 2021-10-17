@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+{% extends 'contacts/base.html' %}
+{% block content %}
+    <h1>Welcome to Contacts DB</h1>
+    <a href={% url 'contacts:contact_list' %}>Contact list</a>
+{% endblock %}

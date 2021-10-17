@@ -1,0 +1,58 @@
+[
+  {
+    "model": "contacts.contact",
+    "pk": 256,
+    "fields": {
+      "name": "Lily",
+      "email": "s@e.d333"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 257,
+    "fields": {
+      "name": "Ted Mosby",
+      "email": "ted@gemail.com"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 258,
+    "fields": {
+      "name": "Marshall Eriksen",
+      "email": "marshall@youremail.com"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 259,
+    "fields": {
+      "name": "Robin Scherbatsky",
+      "email": "robin@gemail.com"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 260,
+    "fields": {
+      "name": "Barney Stinson",
+      "email": "b.stinson@gemail.com"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 261,
+    "fields": {
+      "name": "Monica Geller",
+      "email": "m.geller@mymail.com"
+    }
+  },
+  {
+    "model": "contacts.contact",
+    "pk": 262,
+    "fields": {
+      "name": "Felix Cat",
+      "email": "f.cat@someemail.ua"
+    }
+  }
+]

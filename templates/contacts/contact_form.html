@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'contacts/base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>
+            Create a contact
+        </h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Submit">
+            <a href={% url 'contacts:index' %}>Cancel</a>
+        </form>
+    </div>
+{% endblock %}

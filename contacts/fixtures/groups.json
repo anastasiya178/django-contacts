@@ -1,0 +1,36 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Viewer",
+      "permissions": [
+        28
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Editor",
+      "permissions": [
+        25,
+        28
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+      "name": "Admin",
+      "permissions": [
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  }
+]
