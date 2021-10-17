@@ -1,4 +1,5 @@
 1. Download the project from github:
+ https://github.com/anastasiya178/django-contacts.git
 
 2. Add a database
  - create a new schema
