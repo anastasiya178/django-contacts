@@ -1,6 +1,6 @@
 ### Prerequisites
 Make sure you have installed locally:
-* python3.7+
+* python3.8
 * git
 * virtualenv
 * mySQL server
