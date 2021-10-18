@@ -1,4 +1,4 @@
-""" Send email functionality:
+""" Handler for Send email functionality:
 without SMTP configures, it prints to the console
 """
 

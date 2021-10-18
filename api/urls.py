@@ -1,3 +1,5 @@
+"""URLs for API application"""
+
 from django.urls import path
 from .views import ContactList, ContactDetail
 

@@ -1,3 +1,5 @@
+"""Serializer for Django Rest Framework"""
+
 from rest_framework import serializers
 from contacts.models import Contact
 

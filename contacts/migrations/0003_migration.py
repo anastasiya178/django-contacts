@@ -6,8 +6,8 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('contacts', '0001_initial'),
+        ('contacts', '0002_migration'),
     ]
 
-    operations = [migrations.RunSQL('ALTER DATABASE django_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;')
+    operations = [migrations.RunSQL('ALTER TABLE contacts_contact AUTO_INCREMENT = 256;')
     ]
