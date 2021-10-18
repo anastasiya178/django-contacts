@@ -3,7 +3,7 @@
     "model": "contacts.contact",
     "pk": 256,
     "fields": {
-      "name": "Lily",
+      "name": "Lily J",
       "email": "s@e.d333"
     }
   },
@@ -27,7 +27,7 @@
     "model": "contacts.contact",
     "pk": 259,
     "fields": {
-      "name": "Robin Scherbatsky",
+      "name": "Robin Sch",
       "email": "robin@gemail.com"
     }
   },
