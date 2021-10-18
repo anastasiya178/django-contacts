@@ -28,12 +28,11 @@ pip install -r requirements.txt
          python manage.py createsuperuser
 
 6. Load initial data using fixtures:
+Important> Groups and users are required for Access managemeent, see #7 below.
 
         python manage.py loaddata contacts/fixtures/contacts.json
         python manage.py loaddata contacts/fixtures/groups.json
-        python manage.py loaddata contacts/fixtures/users.json
-        
-Groups and users are required for Access managemeent, see #7 below.
+        python manage.py loaddata contacts/fixtures/users.json       
 
 7. Role management is handled the following way:
     - group Admin (can view, create, delete Contact model)
@@ -41,10 +40,12 @@ Groups and users are required for Access managemeent, see #7 below.
     - group Viewer (can view Contact model)
 
     One of these groups needs to be assigned to a user in order to meet the following project requirements:
-    •	Enforces that actions can only be performed by authenticated users with a certain roles:
+    > Enforces that actions can only be performed by authenticated users with a certain roles:
         o	One role that has read-only access (Viewer group permissions)
         o	Another role that can read/add (Editor group permissions)
         o	Another role that can read/add/delete (Admin group permissions, superuser permissions)
+
+Known issues: API CRUD restrictions are not yet implemented.
 
 8. Run tests:
 
