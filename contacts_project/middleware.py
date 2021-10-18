@@ -1,3 +1,5 @@
+"""Used to enforce user authentication across the website"""
+
 import re
 
 from django.conf import settings
