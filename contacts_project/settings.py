@@ -92,7 +92,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
-            'init_command': 'ALTER DATABASE django_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci',
+            'init_command': 'set default_storage_engine=INNODB',
         },
     }
 }

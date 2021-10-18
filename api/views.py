@@ -1,3 +1,5 @@
+"""Views for API app"""
+
 from django.contrib.auth.decorators import permission_required
 from django.http import Http404
 from rest_framework import status
