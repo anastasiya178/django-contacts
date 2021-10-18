@@ -1,4 +1,5 @@
-"""REST API tests"""
+"""REST API tests
+"""
 
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -32,15 +33,15 @@ class GetContactsTests(APITestCase):
     def test_get_contact_detail(self):
         """ensure that authenticated user can access API contacts details
         """
-        user = User.objects.create_user('Katy', "katy_pass")
+        user = User.objects.create_user('Katy_user', "katy_pass")
         self.client.force_login(user=user)
-        new_contact = Contact(name="Sally G", email="sallys@mail.com")
+        new_contact = Contact(name="Sally N", email="sallys@mail.com")
         new_contact.save()
         pk = new_contact.pk
         url = reverse('api:api_contact_detail', args=[pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(Contact.objects.get().name, 'Sally G')
+        self.assertEqual(Contact.objects.get().name, 'Sally N')
 
     def test_get_contact_detail_anonymous(self):
         """
@@ -53,15 +54,15 @@ class GetContactsTests(APITestCase):
         url = reverse('api:api_contact_detail', args=[pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_302_FOUND)
-        self.assertRedirects(response, "/accounts/login/?next=/api/contacts/256")
 
 
 class CRUDContactTests(APITestCase):
+
     def test_create_contact(self):
         """
         Ensure we can create a new contact object.
         """
-        user = User.objects.create_user("Katy", "katy_pass")
+        user = User.objects.create_user("Katy_user", "katy_pass")
         self.client.force_login(user=user)
         url = reverse('api:api_contacts_list')
         data = {'name': 'Iris', 'email': 'iris@mygmail.com'}
@@ -73,14 +74,25 @@ class CRUDContactTests(APITestCase):
         """
         Ensure we can update an existing contact object.
         """
-        pass
+        user = User.objects.create_user("Katy_user", "katy_pass")
+        self.client.force_login(user=user)
+        contact = Contact(name="Harry G", email="hat@mail.com")
+        contact.save()
+        pk = contact.pk
+        url = reverse('api:api_contact_detail', args=[pk])
+        data = {"name": "Harry H"}
+        response = self.client.put(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_delete_contact(self):
         """
         Ensure we can delete an existing contact object.
         """
-        pass
-
-
-
-
+        user = User.objects.create_user("Katy_user", "katy_pass")
+        self.client.force_login(user=user)
+        contact = Contact(name="Harry G", email="hat@mail.com")
+        contact.save()
+        pk = contact.pk
+        url = reverse('api:api_contact_delete', args=[pk])
+        response = self.client.delete(url, format='json')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
