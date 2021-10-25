@@ -84,6 +84,13 @@ WSGI_APPLICATION = 'contacts_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DJANGO_DB_HOST = config("MYSQL_HOST")
+# DJANGO_DB_PORT = config("MYSQL_DB_PORT")
+# DJANGO_DB_NAME = config("MYSQL_DATABASE")
+# DJANGO_DB_USER = config("MYSQL_USER")
+# DJANGO_DB_PASSWORD = config("MYSQL_PASSWORD")
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

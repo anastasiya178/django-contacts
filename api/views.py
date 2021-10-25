@@ -9,9 +9,10 @@ from contacts.models import Contact
 from .serializers import ContactSerializer
 
 
+
 # Create your API views here.
 
-
+# permission classes
 class CreateContactPermission(permissions.BasePermission):
     """
      Create Contact Permission for users with 'contacts.add_contact' perm
@@ -42,6 +43,7 @@ class DeleteContactPermission(permissions.BasePermission):
         return True
 
 
+# API views with permission classes included
 class ContactList(APIView):
     """
     List all contacts or create a new contact
