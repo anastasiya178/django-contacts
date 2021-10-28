@@ -14,7 +14,7 @@ class GetContactsTests(APITestCase):
         """
         ensure that authenticated user can access API contacts list for
         """
-        user = User.objects.create_user("Katy", "katy_pass")
+        user = User.objects.create_user("New_user", "pass123")
         self.client.force_login(user=user)
         url = reverse('api:api_contacts_list')
         response = self.client.get(url)
@@ -33,22 +33,22 @@ class GetContactsTests(APITestCase):
     def test_get_contact_detail(self):
         """ensure that authenticated user can access API contacts details
         """
-        user = User.objects.create_user('Katy_user', "katy_pass")
+        user = User.objects.create_user('New_user', "pass123")
         self.client.force_login(user=user)
-        new_contact = Contact(name="Sally N", email="sallys@mail.com")
+        new_contact = Contact(name="Christian Jimene", email="sallysal@mail.com")
         new_contact.save()
         pk = new_contact.pk
         url = reverse('api:api_contact_detail', args=[pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(Contact.objects.get().name, 'Sally N')
+        self.assertEqual(Contact.objects.get().name, 'Christian Jimene')
 
     def test_get_contact_detail_anonymous(self):
         """
         ensure that unauthenticated user can't access API contacts details,
         instead they get redirected to login page
         """
-        new_contact = Contact(name="Sally G", email="sallys@mail.com")
+        new_contact = Contact(name="Walker Galloway", email="walker.galloway@mail.com")
         new_contact.save()
         pk = new_contact.pk
         url = reverse('api:api_contact_detail', args=[pk])
@@ -62,7 +62,7 @@ class CRUDContactTests(APITestCase):
         """
         Ensure we can create a new contact object.
         """
-        user = User.objects.create_user("Katy_user", "katy_pass")
+        user = User.objects.create_user("New_user", "pass123")
         self.client.force_login(user=user)
         url = reverse('api:api_contacts_list')
         data = {'name': 'Iris', 'email': 'iris@mygmail.com'}
@@ -74,7 +74,7 @@ class CRUDContactTests(APITestCase):
         """
         Ensure we can update an existing contact object.
         """
-        user = User.objects.create_user("Katy_user", "katy_pass")
+        user = User.objects.create_user("New_user", "pass123")
         self.client.force_login(user=user)
         contact = Contact(name="Harry G", email="hat@mail.com")
         contact.save()
@@ -88,7 +88,7 @@ class CRUDContactTests(APITestCase):
         """
         Ensure we can delete an existing contact object.
         """
-        user = User.objects.create_user("Katy_user", "katy_pass")
+        user = User.objects.create_user("New_user", "pass123")
         self.client.force_login(user=user)
         contact = Contact(name="Harry G", email="hat@mail.com")
         contact.save()
