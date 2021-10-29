@@ -8,6 +8,10 @@ from rest_framework.test import APITestCase
 from contacts.models import Contact
 
 
+class RegistrationTest(APITestCase):
+    """N/a since there is no opportunity to register on the website"""
+    pass
+
 class GetContactsTests(APITestCase):
 
     def test_get_contact_list(self):
