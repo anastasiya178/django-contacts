@@ -28,7 +28,7 @@ class UpdateContactPermission(permissions.BasePermission):
      Update Contact Permission for users with 'contacts.update_contact' perm
      """
     def has_permission(self, request, view):
-        if request.method == "PUT" and not request.user.has_perm('contacts.update_contact'):
+        if request.method == "PUT" and not request.user.has_perm('contacts.change_contact'):
             raise exceptions.PermissionDenied("No permission to update a contact")
         return True
 
