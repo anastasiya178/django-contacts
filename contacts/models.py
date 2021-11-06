@@ -18,3 +18,19 @@ class Contact(models.Model):
 
     def get_absolute_url(self):
         return reverse('contacts:index')
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Order(models.Model):
+    name = models.CharField(max_length=255)
+    ordered_by = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
