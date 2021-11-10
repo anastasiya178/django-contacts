@@ -3,12 +3,23 @@ version: '3'
 services:
   db:
     image: mysql:5.7
+    restart: always
     ports:
       - '3306:3306'
     environment:
       MYSQL_DATABASE: 'django_db'
+      MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
-    restart: always
+
     volumes:
       - ./db_django:/var/lib/mysql
+
+  web:
+    entrypoint: /entrypoint.sh
+    build: .
+    ports:
+      - "8000:8000"
+    restart: always
+    depends_on:
+      - db
