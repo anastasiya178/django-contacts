@@ -21,7 +21,6 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')  #161 static files copied to '/django-contacts/static'.  ?? from where
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -31,7 +30,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'contacts-project-dev.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'contacts-project-dev.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -99,7 +98,7 @@ DATABASES = {
         'NAME': 'django_db',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': 'db',
+        'HOST': 'db', # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
         'PORT': '3306',
         'OPTIONS': {
             'init_command': 'set default_storage_engine=INNODB',
