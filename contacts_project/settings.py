@@ -16,9 +16,9 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  #161 static files copied to '/django-contacts/static'.  ?? from where
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -29,7 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'contacts-project-dev.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'contacts-project-dev.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'contacts_project.middleware.LoginRequiredMiddleware',
+    # 'contacts_project.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'contacts_project.urls'
@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'django_db',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'HOST': 'db', # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
         'PORT': '3306',
         'OPTIONS': {
             'init_command': 'set default_storage_engine=INNODB',
@@ -142,11 +142,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+STATIC_URL = 'static/'
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'

@@ -12,3 +12,22 @@ services:
     restart: always
     volumes:
       - ./db_django:/var/lib/mysql
+  web:
+    build: .
+    command: >
+      sh -c "
+             python manage.py migrate &&
+             python manage.py loaddata contacts/fixtures/contacts.json &&
+             python manage.py loaddata contacts/fixtures/groups.json &&
+             python manage.py loaddata contacts/fixtures/users.json &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/django-contacts/
+    ports:
+      - "8000:8000"
+    environment:
+      MYSQL_DATABASE: 'django_db'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    depends_on:
+      - db
