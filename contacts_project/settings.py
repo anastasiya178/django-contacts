@@ -27,10 +27,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')  #161 static files copied to '/dj
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'contacts-project-dev.us-west-2.elasticbeanstalk.com']
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # Application definition
 
@@ -94,11 +93,11 @@ WSGI_APPLICATION = 'contacts_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_db',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': 'db', # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
-        'PORT': '3306',
+        'NAME': config('MYSQL_DATABASE'),
+        'USER': config('MYSQL_USER'),
+        'PASSWORD': config('MYSQL_PASSWORD'),
+        'HOST': config('MYSQL_HOST'), # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
+        'PORT': config('MYSQL_DB_PORT'),
         'OPTIONS': {
             'init_command': 'set default_storage_engine=INNODB',
         },
@@ -155,14 +154,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # email configs
-MAIL_HOST = 'email-smtp.your.email.host.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'your.host.username'
-EMAIL_HOST_PASSWORD = 'aReally$trongP4ssword'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+MAIL_HOST = config("MAIL_HOST")
+EMAIL_PORT = config("EMAIL_PORT", cast=int)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool)
+EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool)
+EMAIL_BACKEND = config("EMAIL_BACKEND")
+MAILER_EMAIL_BACKEND = config("EMAIL_BACKEND")
 
 
 # rest framework
