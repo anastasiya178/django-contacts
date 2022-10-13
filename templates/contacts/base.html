@@ -13,6 +13,8 @@
             <li class="nav-item"><a class="nav-link" href={% url 'admin:index' %}>Admin</a></li>
             <li class="nav-item"><a class="nav-link" href={% url 'api:api_contacts_list' %}>API</a></li>
             <li class="nav-item"><a class="nav-link" href={% url 'logout' %}>Logout</a></li>
+        {% else %}
+            <li class="nav-item"><a class="nav-link" href={% url 'admin:index' %}>Login</a></li>
         {% endif %}
         </ul>
     </nav>
