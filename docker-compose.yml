@@ -18,8 +18,7 @@ services:
       sh -c "
              python manage.py migrate &&
              python manage.py loaddata contacts/fixtures/contacts.json &&
-             python manage.py loaddata contacts/fixtures/groups.json &&
-             python manage.py loaddata contacts/fixtures/users.json &&
+             python manage.py loaddata contacts/fixtures/auth_groups.json &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/django-contacts/
