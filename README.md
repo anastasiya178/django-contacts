@@ -1,3 +1,10 @@
+##### Contacts Django
+
+Using the app you can add and remove the contacts using the UI, as well the API and the Django 
+admin.
+
+###### Installation guide
+
 1. Clone the project from github:
  https://github.com/anastasiya178/django-contacts.git
 
@@ -11,7 +18,7 @@
 `~ django-contacts % docker-compose up`
 
 If the services are up and running, you would see the following 
-message: 
+message in the terminal: 
 
 `Django version 4.1.2, using settings 'contacts_project.settings'
 Starting development server at http://127.0.0.1:8000/
@@ -21,21 +28,23 @@ Quit the server with CONTROL-C.`
 
 5. If you can see the table with contacts - the app is successfully installed!
 
-6. In order to use edit mode without any restrictions, you would need to create a superuser: 
+6. In order to use edit mode, you would need to create a superuser: 
 
-`django-contacts % docker-compose run web /bin/bash`
+`~ django-contacts % docker-compose run web /bin/bash`
 
 In the opened shell: 
 
 `root@9dbfa2f99657:/django-contacts# 
 `
-
 execute the following command:
 
 `python manage.py createsuperuser
 `
+Insert username, email (optional), password of your choice:
 
-Insert username, email(optional), password of your choice. 
+Now you can login to the Django admin: http://0.0.0.0:8000/admin/
+and be able to edit the contacts or create additional users (see #6 for Role 
+management).
 
 6. Role management is handled the following way:
     - group Admin (can view, create, delete Contact model)
