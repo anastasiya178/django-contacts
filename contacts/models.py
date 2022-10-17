@@ -10,11 +10,12 @@ from django.urls import reverse
 
 class Contact(models.Model):
     id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=255, default=None)
+    first_name = models.CharField(max_length=255, default=None)
+    last_name = models.CharField(max_length=255, default=None)
     email = models.CharField(max_length=255, default=None)
 
     def __str__(self):
-        return self.name
+        return self.first_name, self.last_name
 
     def get_absolute_url(self):
         return reverse('contacts:index')
