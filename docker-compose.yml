@@ -25,9 +25,5 @@ services:
       - .:/django-contacts/
     ports:
       - "8000:8000"
-    environment:
-      MYSQL_DATABASE: 'django_db'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
     depends_on:
       - db
