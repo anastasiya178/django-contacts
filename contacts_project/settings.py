@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsAppConfig',
     'api.apps.ApiConfig',
     'rest_framework',
+    'import_export',
 ]
 
 MIDDLEWARE = [
