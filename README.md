@@ -3,6 +3,11 @@
 Using the app you can add and remove the contacts using the UI, as well the API and the Django 
 admin.
 
+Table of Contents:
+- Installation Guide
+- Linters
+- How to login to Docker web container shell
+
 ###### Installation guide
 
 1. Clone the project from github:
@@ -58,9 +63,25 @@ One of these groups needs to be assigned to a user in order to meet the followin
         o	Another role that can read/add/delete (Admin group permissions, superuser permissions)
 
 8. Run tests:
+- login to Docker web container shell
+
+`~ django-contacts % docker-compose run web /bin/bash`
 
 `python manage.py test`
+
+###### Linters used: 
+See the list of linters used on the project:
+
+1. [Pylint](https://docs.pylint.org/) is a tool that checks for errors in Python code, tries to enforce a coding standard 
+and looks for bad code smells. 
+
+2. [flake8](https://flake8.pycqa.org/) is a tool for style guide enforcement.
 
 ###### How to login to Docker web container shell
 
 `~ django-contacts % docker-compose run web /bin/bash`
+
+May be useful for: 
+- running tests
+- creating superuser
+- doing other things using `python manage.py`

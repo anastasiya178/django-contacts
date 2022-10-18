@@ -3,6 +3,7 @@ django-import-export
 django-mysql
 djangorestframework
 environ
+flake8
 isort
 mysqlclient
 pylint
