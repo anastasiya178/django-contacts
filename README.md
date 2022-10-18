@@ -60,3 +60,7 @@ One of these groups needs to be assigned to a user in order to meet the followin
 8. Run tests:
 
 `python manage.py test`
+
+###### How to login to Docker web container shell
+
+`~ django-contacts % docker-compose run web /bin/bash`
