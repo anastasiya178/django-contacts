@@ -14,12 +14,12 @@ class ContactList(ListView):
 
 
 class ContactCreateView(PermissionRequiredMixin, CreateView):
-    permission_required = 'contacts.add_contact'
+    permission_required = "contacts.add_contact"
     model = Contact
-    fields = ('name', 'email')
+    fields = ("first_name", "last_name", "email")
 
 
 class ContactDeleteView(PermissionRequiredMixin, DeleteView):
-    permission_required = 'contacts.delete_contact'
+    permission_required = "contacts.delete_contact"
     model = Contact
-    success_url = reverse_lazy('contacts:index')
+    success_url = reverse_lazy("contacts:index")
