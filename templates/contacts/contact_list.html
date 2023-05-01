@@ -3,6 +3,10 @@
 {% load auth_extras %}
 {% block content %}
     <h2>Welcome to Contacts!</h2>
+    <div class="input-group">
+      <input type="search" class="rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
     {% if contact_list %}
         <table class="table">
             <th>Record ID</th>
