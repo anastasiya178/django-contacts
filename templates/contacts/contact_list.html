@@ -4,8 +4,8 @@
 {% block content %}
     <h2>Welcome to Contacts!</h2>
     <div class="input-group">
-      <input type="search" class="rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <button type="button" class="btn btn-outline-primary">search</button>
+        <input type="search" class="rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+        <button type="button" class="btn btn-outline-primary">search</button>
     </div>
     {% if contact_list %}
         <table class="table">
@@ -16,22 +16,46 @@
             {% if request.user|has_group:"Admin" or request.user.is_superuser %}
                 <th>Action</th>
             {% endif %}
-        {% for contact in contact_list %}
-            <tr>
-                <td> {{ contact.pk }}</td>
-                <td>{{ contact.first_name }}</td>
-                <td>{{ contact.last_name }}</td>
-                <td>{{ contact.email }}</td>
-                {% if request.user.is_superuser or request.user|has_group:"Admin" %}
-                    <td><a class="btn btn-danger" href={% url 'contacts:delete_contact' pk=contact.pk%}>Delete</a></td>
-                {% endif %}
-            </tr>
-        {% endfor %}
+            {% for contact in contact_list %}
+                <tr>
+                    <td> {{ contact.pk }}</td>
+                    <td>{{ contact.first_name }}</td>
+                    <td>{{ contact.last_name }}</td>
+                    <td>{{ contact.email }}</td>
+                    {% if request.user.is_superuser or request.user|has_group:"Admin" %}
+                        <td><a class="btn btn-danger" href={% url 'contacts:delete_contact' pk=contact.pk %}>Delete</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
         </table>
+
+        <nav aria-label="page_nav" class="center-block">
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                    <li class="page-item"><a class="page-link"
+                                             href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                {% endif %}
+                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last
+                        &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+
     {% else %}
         <p>Contacts list is empty</p>
     {% endif %}
-    {% if request.user|has_group:"Admin" or request.user|has_group:"Editor" or request.user.is_superuser  %}
+    {% if request.user|has_group:"Admin" or request.user|has_group:"Editor" or request.user.is_superuser %}
         <p><a class="btn btn-primary" href={% url 'contacts:create_contact' %}>Create new contact</a></p>
     {% endif %}
 {% endblock %}

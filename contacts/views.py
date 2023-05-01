@@ -11,6 +11,7 @@ from contacts.models import Contact
 
 class ContactList(ListView):
     model = Contact
+    paginate_by = 10
 
 
 class ContactCreateView(PermissionRequiredMixin, CreateView):
