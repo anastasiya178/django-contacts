@@ -69,6 +69,18 @@ One of these groups needs to be assigned to a user in order to meet the followin
 
 `python manage.py test`
 
+9. API 
+There are few ways to make API calls: 
+- using DRF web interface: http://0.0.0.0:8000/api/contacts/
+- using CURL
+- using Postman
+- programatically
+
+TBD:
+Currently there are the following endpoint implemented: 
+- api/contacts/
+- api/contacts/<id>
+
 ###### Linters used: 
 See the list of linters used on the project:
 
