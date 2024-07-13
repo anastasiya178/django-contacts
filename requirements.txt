@@ -5,7 +5,7 @@ djangorestframework
 environ
 flake8
 isort
-mysqlclient
+psycopg2
 pylint
 python-decouple
 pytz
