@@ -29,6 +29,9 @@ message in the terminal:
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.`
 
+Known issue: web can start earlier than db gets built.
+In that case, run docker-compose up db and then docker-compose up web
+
 4. Follow http://0.0.0.0:8000/
 
 5. If you can see the table with contacts - the app is successfully installed!
@@ -85,3 +88,8 @@ May be useful for:
 - running tests
 - creating superuser
 - doing other things using `python manage.py`
+
+
+Helpful links: 
+
+https://stackoverflow.com/questions/58547120/django-db-utils-operationalerror-2002-cant-connect-to-mysql-server-on-db
