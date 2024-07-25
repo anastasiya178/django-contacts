@@ -99,9 +99,6 @@ DATABASES = {
         'PASSWORD': config('MYSQL_PASSWORD'),
         'HOST': config('MYSQL_HOST'), # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
         'PORT': config('MYSQL_DB_PORT'),
-        'OPTIONS': {
-            'init_command': 'set default_storage_engine=INNODB',
-        },
     }
 }
 

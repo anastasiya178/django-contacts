@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mysql:5.7
+    image: mysql
     ports:
       - '3306:3306'
     environment:
@@ -12,6 +12,8 @@ services:
     restart: always
     volumes:
       - ./db_django:/var/lib/mysql
+    healthcheck:
+      test: "exit 0"
   web:
     build: .
     command: >
@@ -26,4 +28,5 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
