@@ -16,9 +16,9 @@ services:
     #    tmpfs:
     #      size: 134217728 # 128*2^20 bytes = 128Mb
     environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'C0ntacts123'
-      POSTGRES_DATABASE: 'django_postgres'
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
     healthcheck:
       test: "exit 0"
   web:
