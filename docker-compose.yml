@@ -2,16 +2,23 @@ version: '3'
 
 services:
   db:
-    image: mysql
-    ports:
-      - '3306:3306'
-    environment:
-      MYSQL_DATABASE: 'django_db'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+    image: postgres:15
     restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    ports:
+      - '5432:5432'
     volumes:
-      - ./db_django:/var/lib/mysql
+      - ./django_postgres:/var/lib/postgresql/data
+      - .:/docker-entrypoint-initdb.d
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
     healthcheck:
       test: "exit 0"
   web:
