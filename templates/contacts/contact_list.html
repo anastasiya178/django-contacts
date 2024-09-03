@@ -1,11 +1,12 @@
-<!DOCTYPE html>
 {% extends 'contacts/base.html' %}
 {% load auth_extras %}
 {% block content %}
     <h2>Welcome to Contacts!</h2>
     <div class="input-group">
-        <input type="search" class="rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-        <button type="button" class="btn btn-outline-primary">search</button>
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
     </div>
     {% if contact_list %}
         <table class="table">
@@ -16,7 +17,7 @@
             {% if request.user|has_group:"Admin" or request.user.is_superuser %}
                 <th>Action</th>
             {% endif %}
-            {% for contact in contact_list %}
+            {% for contact in filter.qs %}
                 <tr>
                     <td> {{ contact.pk }}</td>
                     <td>{{ contact.first_name }}</td>
@@ -31,31 +32,37 @@
         </table>
 
         <nav aria-label="page_nav" class="center-block">
-        <p class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </p>
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
-                    <li class="page-item"><a class="page-link"
-                                             href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+            {% if not filter.qs %}
+                <p>No records match </p>
+
                 {% endif %}
-                <li class="page-item active" aria-current="page"><a class="page-link"
-                                                                    href="?page={{ page_obj.number }}">{{ page_obj.number }}<span
-                        class="sr-only">(current)</span></a></li>
-                {% if page_obj.has_next %}
-                    <li class="page-item"><a class="page-link"
-                                             href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last
-                        &raquo;</a></li>
-                {% endif %}
-            </ul>
+            <p class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </p>
+            {% if page_obj.has_other_pages %}
+                <ul class="pagination">
+
+                    {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                        <li class="page-item"><a class="page-link"
+                                                 href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                    {% endif %}
+                    <li class="page-item active" aria-current="page"><a class="page-link"
+                                                                        href="?page={{ page_obj.number }}">{{ page_obj.number }}<span
+                            class="sr-only">(current)</span></a></li>
+                    {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link"
+                                                 href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                        </li>
+                        <li class="page-item"><a class="page-link"
+                                                 href="?page={{ page_obj.next_page_number }}">Next</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last
+                            &raquo;</a></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
         </nav>
-
-
     {% else %}
         <p>Contacts list is empty</p>
     {% endif %}
