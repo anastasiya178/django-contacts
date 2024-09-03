@@ -1,8 +1,8 @@
 """Unit tests for Contacts app"""
 import unittest
 
-from django.test import TestCase
 from django.contrib.auth.models import User, Group
+from django.test import TestCase
 from django.urls import reverse
 
 from .models import Contact

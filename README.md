@@ -29,16 +29,7 @@ message in the terminal:
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.`
 
-Known issue 1: web can start earlier than db gets built.
-In that case, run docker-compose up db and then docker-compose up web
 
-Known issue 2: DB doesn't get created in DB container. As a workaround, Create DB manually
-
-anastasiakr@MacBook ~ % docker exec -it e5833c58e4db534199428430953673adccdf37f665428e8bd1f6821c4850424d /bin/sh
-~ % psql -h localhost -U postgres
-~ % postgres=# CREATE DATABASE django_postgres;
-CREATE DATABASE
-~ % postgres=# \l
 
 4. Follow http://0.0.0.0:8000/
 
