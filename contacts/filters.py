@@ -1,5 +1,7 @@
 import django_filters
+
 from contacts.models import Contact
+
 
 class ContactFilter(django_filters.FilterSet):
     """ Search filter by last name for Contact list page """
