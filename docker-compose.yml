@@ -25,11 +25,15 @@ services:
     build: .
     command: >
       sh -c "
-             python manage.py collectstatic
-             python manage.py migrate &&
-             python manage.py loaddata contacts/fixtures/contacts.json &&
-             python manage.py loaddata contacts/fixtures/auth_groups.json &&
-             python manage.py runserver 0.0.0.0:8000"
+            python manage.py collectstatic
+            python manage.py makemigrations &&
+            python manage.py migrate &&
+            python manage.py loaddata contacts/fixtures/contacts.json &&
+            python manage.py loaddata contacts/fixtures/auth_groups.json &&
+            python manage.py loaddata contacts/fixtures/animals.json &&
+            python manage.py loaddata contacts/fixtures/breeds.json &&
+            python manage.py loaddata contacts/fixtures/pets.json &&
+            python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/django-contacts/
     ports:

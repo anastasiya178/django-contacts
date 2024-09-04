@@ -1,0 +1,28 @@
+[
+   {
+    "model": "contacts.pet",
+    "pk": 1,
+    "fields": {
+      "name": "Pete",
+      "dob": "2022-11-01",
+      "gender": "M",
+      "color": "gray",
+      "owner": 241,
+      "animal": 1,
+      "breed": 1
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 2,
+    "fields": {
+      "name": "Sitka",
+      "dob": "2010-11-01",
+      "gender": "F",
+      "color": "gray and white",
+      "owner": 245,
+      "animal": 2,
+      "breed": 1
+    }
+  }
+]
