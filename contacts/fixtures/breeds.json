@@ -1,0 +1,162 @@
+[
+    {
+        "model": "contacts.breed",
+        "pk": 1,
+        "fields": {
+            "name": "Mixed breed",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 2,
+        "fields": {
+            "name": "French Bulldog",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 3,
+        "fields": {
+            "name": "German Shepherd",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 4,
+        "fields": {
+            "name": "Golden Retriever",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 5,
+        "fields": {
+            "name": "Bulldog",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 6,
+        "fields": {
+            "name": "Poodle",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 7,
+        "fields": {
+            "name": "Beagle",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 8,
+        "fields": {
+            "name": "Rottweiler",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 9,
+        "fields": {
+            "name": "German Shorthaired Pointer",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 10,
+        "fields": {
+            "name": "Dachshund",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 11,
+        "fields": {
+            "name": "Pembroke Welsh Corgi",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 12,
+        "fields": {
+            "name": "Australian Shepherd",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 13,
+        "fields": {
+            "name": "Yorkshire Terrier",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 14,
+        "fields": {
+            "name": "Boxer",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 15,
+        "fields": {
+            "name": "Great Dane",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 16,
+        "fields": {
+            "name": "Siberian Husky",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 17,
+        "fields": {
+            "name": "Cavalier King Charles Spaniel",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 18,
+        "fields": {
+            "name": "Doberman Pinscher",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 19,
+        "fields": {
+            "name": "Shih Tzu",
+            "animal": 1
+        }
+    },
+    {
+        "model": "contacts.breed",
+        "pk": 20,
+        "fields": {
+            "name": "Miniature Schnauzer",
+            "animal": 1
+        }
+    }
+]
