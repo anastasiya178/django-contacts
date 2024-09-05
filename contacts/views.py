@@ -5,8 +5,8 @@ from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView
 
-from contacts.filters import ContactFilter
-from contacts.models import Contact
+from contacts.filters import ContactFilter, PetFilter
+from contacts.models import Contact, Pet
 
 
 # Create your views here.
@@ -45,6 +45,33 @@ class ContactDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = "contacts.delete_contact"
     model = Contact
     success_url = reverse_lazy("contacts:index")
+
+
+# Pets
+# class PetList(FilteredListView):
+class PetList(ListView):
+    model = Pet
+
+    def get_context_data(self, **kwargs):
+        """
+        Extend or overwrite PetList view context.
+        Add filter.
+        Overwrite page_obj for pagination.
+        """
+        # call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        contact_filter = PetFilter(self.request.GET, queryset=Pet.objects.all())
+        context['filter'] = contact_filter
+
+        # overwrite pagination to include
+        paginator = Paginator(contact_filter.qs, 20)  # Show 25 contacts per page.
+        page_number = self.request.GET.get("page")
+        page_obj_filtered = paginator.get_page(page_number)
+        context['page_obj'] = page_obj_filtered
+        return context
+
+    # filter_fields = ["name"]
 
 # Example of function-based view
 # def current_datetime(request):
