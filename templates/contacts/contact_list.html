@@ -8,7 +8,7 @@
             <button type="submit" class="btn btn-outline-primary">Search</button>
         </form>
     </div>
-    {% if contact_list %}
+    {% if filter.qs %}
         <table class="table">
             <th>Record ID</th>
             <th>First Name</th>
@@ -17,7 +17,7 @@
             {% if request.user|has_group:"Admin" or request.user.is_superuser %}
                 <th>Action</th>
             {% endif %}
-            {% for contact in filter.qs %}
+            {% for contact in page_obj %}
                 <tr>
                     <td> {{ contact.pk }}</td>
                     <td>{{ contact.first_name }}</td>

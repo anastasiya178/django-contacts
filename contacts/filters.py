@@ -13,7 +13,7 @@ class ContactFilter(django_filters.FilterSet):
 
 
 class PetFilter(django_filters.FilterSet):
-    """ Search filter by last name for Contact list page """
+    """ Search filter by last name for Pet list page """
     name = django_filters.CharFilter(lookup_expr='iexact')
 
     class Meta:
