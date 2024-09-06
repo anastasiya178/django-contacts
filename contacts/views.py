@@ -5,34 +5,38 @@ from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView
 
-from contacts.filters import ContactFilter
-from contacts.models import Contact
+from contacts.filters import ContactFilter, PetFilter
+from contacts.models import Contact, Pet
 
 
 # Create your views here.
+class FilteredListViewMixin:
+    """ A mixin that adds a filter to ListView"""
+    filter_class = None
+    paginate_by = 10
 
-
-class ContactList(ListView):
-    model = Contact
+    def get_filter(self):
+        return self.filter_class(self.request.GET, queryset=self.model.objects.all())
 
     def get_context_data(self, **kwargs):
-        """
-        Extend or overwrite ContactList view context.
-        Add filter.
-        Overwrite page_obj for pagination.
-        """
-        # call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
 
-        contact_filter = ContactFilter(self.request.GET, queryset=Contact.objects.all())
-        context['filter'] = contact_filter
+        # Apply filtering
+        object_filter = self.get_filter()
+        context['filter'] = object_filter
 
-        # overwrite pagination to include
-        paginator = Paginator(contact_filter.qs, 20)  # Show 25 contacts per page.
+        # Apply pagination
+        paginator = Paginator(object_filter.qs, self.paginate_by)
         page_number = self.request.GET.get("page")
         page_obj_filtered = paginator.get_page(page_number)
         context['page_obj'] = page_obj_filtered
+
         return context
+
+
+class ContactList(FilteredListViewMixin, ListView):
+    model = Contact
+    filter_class = ContactFilter
 
 
 class ContactCreateView(PermissionRequiredMixin, CreateView):
@@ -45,6 +49,17 @@ class ContactDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = "contacts.delete_contact"
     model = Contact
     success_url = reverse_lazy("contacts:index")
+
+
+# Pets
+# class PetList(FilteredListView):
+class PetList(FilteredListViewMixin, ListView):
+    model = Pet
+    filter_class = PetFilter
+    # if you specify paginate_by here, it will overwright the value in FilteredListView
+    # paginate_by = 5
+
+    # filter_fields = ["name"]
 
 # Example of function-based view
 # def current_datetime(request):

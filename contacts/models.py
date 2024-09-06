@@ -2,6 +2,8 @@
 from django.db import models
 from django.urls import reverse
 
+from datetime import datetime
+
 
 # Create your models here.
 class Contact(models.Model):
@@ -32,6 +34,11 @@ class Pet(models.Model):
     owner = models.ForeignKey("Contact", on_delete=models.CASCADE)
     animal = models.ForeignKey("Animal", on_delete=models.CASCADE)
     breed = models.ForeignKey("Breed", on_delete=models.CASCADE)
+
+    @property
+    def age(self):
+        age = datetime.now().date() - self.dob
+        return int(age.days / 365.25)
 
     def __str__(self):
         return f"{self.name}, {self.animal}"

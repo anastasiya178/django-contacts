@@ -1,7 +1,345 @@
 [
-   {
+  {
     "model": "contacts.pet",
     "pk": 1,
+    "fields": {
+      "name": "Max",
+      "dob": "2020-05-11",
+      "gender": "M",
+      "color": "brown",
+      "owner": 241,
+      "animal": 1,
+      "breed": 5
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 2,
+    "fields": {
+      "name": "Bella",
+      "dob": "2018-03-22",
+      "gender": "F",
+      "color": "white and tan",
+      "owner": 244,
+      "animal": 1,
+      "breed": 3
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 3,
+    "fields": {
+      "name": "Charlie",
+      "dob": "2019-12-30",
+      "gender": "M",
+      "color": "black",
+      "owner": 248,
+      "animal": 2,
+      "breed": 23
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 4,
+    "fields": {
+      "name": "Lucy",
+      "dob": "2021-08-16",
+      "gender": "F",
+      "color": "gray",
+      "owner": 250,
+      "animal": 2,
+      "breed": 27
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 5,
+    "fields": {
+      "name": "Rocky",
+      "dob": "2017-07-03",
+      "gender": "M",
+      "color": "black and white",
+      "owner": 252,
+      "animal": 1,
+      "breed": 15
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 6,
+    "fields": {
+      "name": "Luna",
+      "dob": "2016-11-14",
+      "gender": "F",
+      "color": "gray and white",
+      "owner": 253,
+      "animal": 2,
+      "breed": 33
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 7,
+    "fields": {
+      "name": "Duke",
+      "dob": "2019-10-25",
+      "gender": "M",
+      "color": "brown",
+      "owner": 255,
+      "animal": 1,
+      "breed": 7
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 8,
+    "fields": {
+      "name": "Molly",
+      "dob": "2020-02-02",
+      "gender": "F",
+      "color": "black",
+      "owner": 258,
+      "animal": 1,
+      "breed": 2
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 9,
+    "fields": {
+      "name": "Leo",
+      "dob": "2021-09-07",
+      "gender": "M",
+      "color": "white",
+      "owner": 260,
+      "animal": 2,
+      "breed": 25
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 10,
+    "fields": {
+      "name": "Chloe",
+      "dob": "2015-04-10",
+      "gender": "F",
+      "color": "orange",
+      "owner": 262,
+      "animal": 2,
+      "breed": 31
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 11,
+    "fields": {
+      "name": "Buddy",
+      "dob": "2018-12-21",
+      "gender": "M",
+      "color": "golden",
+      "owner": 263,
+      "animal": 1,
+      "breed": 10
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 12,
+    "fields": {
+      "name": "Sophie",
+      "dob": "2021-01-11",
+      "gender": "F",
+      "color": "white and black",
+      "owner": 265,
+      "animal": 1,
+      "breed": 19
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 13,
+    "fields": {
+      "name": "Milo",
+      "dob": "2022-06-08",
+      "gender": "M",
+      "color": "gray",
+      "owner": 266,
+      "animal": 2,
+      "breed": 21
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 14,
+    "fields": {
+      "name": "Lily",
+      "dob": "2017-10-19",
+      "gender": "F",
+      "color": "brown",
+      "owner": 267,
+      "animal": 2,
+      "breed": 22
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 15,
+    "fields": {
+      "name": "Jack",
+      "dob": "2018-11-17",
+      "gender": "M",
+      "color": "tan",
+      "owner": 270,
+      "animal": 1,
+      "breed": 4
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 16,
+    "fields": {
+      "name": "Daisy",
+      "dob": "2016-12-02",
+      "gender": "F",
+      "color": "white",
+      "owner": 272,
+      "animal": 1,
+      "breed": 6
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 17,
+    "fields": {
+      "name": "Simba",
+      "dob": "2015-09-14",
+      "gender": "M",
+      "color": "black",
+      "owner": 273,
+      "animal": 2,
+      "breed": 29
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 18,
+    "fields": {
+      "name": "Coco",
+      "dob": "2019-03-23",
+      "gender": "F",
+      "color": "cream",
+      "owner": 275,
+      "animal": 2,
+      "breed": 34
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 19,
+    "fields": {
+      "name": "Toby",
+      "dob": "2020-07-18",
+      "gender": "M",
+      "color": "white and brown",
+      "owner": 277,
+      "animal": 1,
+      "breed": 12
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 20,
+    "fields": {
+      "name": "Zoe",
+      "dob": "2017-05-30",
+      "gender": "F",
+      "color": "gray and black",
+      "owner": 279,
+      "animal": 1,
+      "breed": 14
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 21,
+    "fields": {
+      "name": "Oscar",
+      "dob": "2021-11-06",
+      "gender": "M",
+      "color": "orange",
+      "owner": 241,
+      "animal": 2,
+      "breed": 26
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 22,
+    "fields": {
+      "name": "Bailey",
+      "dob": "2018-02-28",
+      "gender": "F",
+      "color": "brown and black",
+      "owner": 244,
+      "animal": 1,
+      "breed": 8
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 23,
+    "fields": {
+      "name": "Felix",
+      "dob": "2020-12-12",
+      "gender": "M",
+      "color": "gray and white",
+      "owner": 246,
+      "animal": 2,
+      "breed": 32
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 24,
+    "fields": {
+      "name": "Nala",
+      "dob": "2021-03-14",
+      "gender": "F",
+      "color": "tan and white",
+      "owner": 248,
+      "animal": 1,
+      "breed": 18
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 25,
+    "fields": {
+      "name": "Archie",
+      "dob": "2022-09-10",
+      "gender": "M",
+      "color": "black",
+      "owner": 250,
+      "animal": 2,
+      "breed": 30
+    }
+  },
+  {
+    "model": "contacts.pet",
+    "pk": 26,
+    "fields": {
+      "name": "Ellie",
+      "dob": "2016-10-08",
+      "gender": "F",
+      "color": "cream and brown",
+      "owner": 252,
+      "animal": 2,
+      "breed": 28
+    }
+  },
+    {
+    "model": "contacts.pet",
+    "pk": 27,
     "fields": {
       "name": "Pete",
       "dob": "2022-11-01",
@@ -14,7 +352,7 @@
   },
   {
     "model": "contacts.pet",
-    "pk": 2,
+    "pk": 28,
     "fields": {
       "name": "Sitka",
       "dob": "2010-11-01",

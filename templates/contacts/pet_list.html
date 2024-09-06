@@ -1,0 +1,39 @@
+{% extends 'contacts/base.html' %}
+{% load auth_extras %}
+{% block content %}
+    <h2>Pets</h2>
+    <div class="input-group">
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+    </div>
+    {% if filter.qs %}
+        <table class="table">
+            <th>Record ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Owner</th>
+            {% for pet in page_obj %}
+                <tr>
+                    <td>{{ pet.pk }}</td>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.age }}</td>
+                    <td>{{ pet.gender }}</td>
+                    <td>{{ pet.owner }}</td>
+                    {#                    {% if request.user.is_superuser or request.user|has_group:"Admin" %}#}
+                    {#                        <td><a class="btn btn-danger" href={% url 'contacts:delete_contact' pk=contact.pk %}>Delete</a>#}
+                    {#                        </td>#}
+                    {#                    {% endif %}#}
+                </tr>
+            {% endfor %}
+        </table>
+        {% include 'contacts/pagination_list.html' %}
+    {% else %}
+        <p>No records match </p>
+    {% endif %}
+{#    {% if request.user|has_group:"Admin" or request.user|has_group:"Editor" or request.user.is_superuser %}#}
+{#        <p><a class="btn btn-primary" href={% url 'contacts:create_contact' %}>Create new contact</a></p>#}
+{#    {% endif %}#}
+{% endblock %}

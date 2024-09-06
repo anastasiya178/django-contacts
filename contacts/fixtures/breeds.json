@@ -1,162 +1,562 @@
 [
+  {
+    "model": "contacts.breed",
+    "pk": 1,
+    "fields": {
+      "name": "Mixed breed",
+      "animal": 1
+    }
+  },
     {
-        "model": "contacts.breed",
-        "pk": 1,
-        "fields": {
-            "name": "Mixed breed",
-            "animal": 1
-        }
+    "model": "contacts.breed",
+    "pk": 2,
+    "fields": {
+      "name": "French Bulldog",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 3,
+    "fields": {
+      "name": "German Shepherd",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 4,
+    "fields": {
+      "name": "Golden Retriever",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 5,
+    "fields": {
+      "name": "Bulldog",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 6,
+    "fields": {
+      "name": "Poodle",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 7,
+    "fields": {
+      "name": "Beagle",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 8,
+    "fields": {
+      "name": "Rottweiler",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 9,
+    "fields": {
+      "name": "German Shorthaired Pointer",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 10,
+    "fields": {
+      "name": "Dachshund",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 11,
+    "fields": {
+      "name": "Pembroke Welsh Corgi",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 12,
+    "fields": {
+      "name": "Australian Shepherd",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 13,
+    "fields": {
+      "name": "Yorkshire Terrier",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 14,
+    "fields": {
+      "name": "Boxer",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 15,
+    "fields": {
+      "name": "Great Dane",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 16,
+    "fields": {
+      "name": "Siberian Husky",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 17,
+    "fields": {
+      "name": "Cavalier King Charles Spaniel",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 18,
+    "fields": {
+      "name": "Doberman Pinscher",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 19,
+    "fields": {
+      "name": "Shih Tzu",
+      "animal": 1
+    }
+  },
+  {
+    "model": "contacts.breed",
+    "pk": 20,
+    "fields": {
+      "name": "Miniature Schnauzer",
+      "animal": 1
+    }
+  },
+    {
+      "model": "contacts.breed",
+      "pk": 21,
+      "fields": {
+        "name": "Persian",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 2,
-        "fields": {
-            "name": "French Bulldog",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 22,
+      "fields": {
+        "name": "Maine Coon",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 3,
-        "fields": {
-            "name": "German Shepherd",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 23,
+      "fields": {
+        "name": "Siamese",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 4,
-        "fields": {
-            "name": "Golden Retriever",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 24,
+      "fields": {
+        "name": "Ragdoll",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 5,
-        "fields": {
-            "name": "Bulldog",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 25,
+      "fields": {
+        "name": "Bengal",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 6,
-        "fields": {
-            "name": "Poodle",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 26,
+      "fields": {
+        "name": "British Shorthair",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 7,
-        "fields": {
-            "name": "Beagle",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 27,
+      "fields": {
+        "name": "Sphynx",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 8,
-        "fields": {
-            "name": "Rottweiler",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 28,
+      "fields": {
+        "name": "Abyssinian",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 9,
-        "fields": {
-            "name": "German Shorthaired Pointer",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 29,
+      "fields": {
+        "name": "Birman",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 10,
-        "fields": {
-            "name": "Dachshund",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 30,
+      "fields": {
+        "name": "Oriental Shorthair",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 11,
-        "fields": {
-            "name": "Pembroke Welsh Corgi",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 31,
+      "fields": {
+        "name": "Scottish Fold",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 12,
-        "fields": {
-            "name": "Australian Shepherd",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 32,
+      "fields": {
+        "name": "Devon Rex",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 13,
-        "fields": {
-            "name": "Yorkshire Terrier",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 33,
+      "fields": {
+        "name": "American Shorthair",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 14,
-        "fields": {
-            "name": "Boxer",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 34,
+      "fields": {
+        "name": "Himalayan",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 15,
-        "fields": {
-            "name": "Great Dane",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 35,
+      "fields": {
+        "name": "Russian Blue",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 16,
-        "fields": {
-            "name": "Siberian Husky",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 36,
+      "fields": {
+        "name": "Norwegian Forest",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 17,
-        "fields": {
-            "name": "Cavalier King Charles Spaniel",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 37,
+      "fields": {
+        "name": "Turkish Angora",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 18,
-        "fields": {
-            "name": "Doberman Pinscher",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 38,
+      "fields": {
+        "name": "Chartreux",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 19,
-        "fields": {
-            "name": "Shih Tzu",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 39,
+      "fields": {
+        "name": "Manx",
+        "animal": 2
+      }
     },
     {
-        "model": "contacts.breed",
-        "pk": 20,
-        "fields": {
-            "name": "Miniature Schnauzer",
-            "animal": 1
-        }
+      "model": "contacts.breed",
+      "pk": 40,
+      "fields": {
+        "name": "Turkish Van",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 41,
+      "fields": {
+        "name": "Tonkinese",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 42,
+      "fields": {
+        "name": "Egyptian Mau",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 43,
+      "fields": {
+        "name": "Balinese",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 44,
+      "fields": {
+        "name": "Burmese",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 45,
+      "fields": {
+        "name": "Cornish Rex",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 46,
+      "fields": {
+        "name": "LaPerm",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 47,
+      "fields": {
+        "name": "Ocicat",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 48,
+      "fields": {
+        "name": "Selkirk Rex",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 49,
+      "fields": {
+        "name": "Japanese Bobtail",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 50,
+      "fields": {
+        "name": "Somali",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 51,
+      "fields": {
+        "name": "Singapura",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 52,
+      "fields": {
+        "name": "Savannah",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 53,
+      "fields": {
+        "name": "Snowshoe",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 54,
+      "fields": {
+        "name": "Oriental Longhair",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 55,
+      "fields": {
+        "name": "Korat",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 56,
+      "fields": {
+        "name": "Pixie-Bob",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 57,
+      "fields": {
+        "name": "American Curl",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 58,
+      "fields": {
+        "name": "Turkish Angora",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 59,
+      "fields": {
+        "name": "Burmilla",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 60,
+      "fields": {
+        "name": "Exotic Shorthair",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 61,
+      "fields": {
+        "name": "Khao Manee",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 62,
+      "fields": {
+        "name": "Havana Brown",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 63,
+      "fields": {
+        "name": "American Bobtail",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 64,
+      "fields": {
+        "name": "Cymric",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 65,
+      "fields": {
+        "name": "Javanese",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 66,
+      "fields": {
+        "name": "Minskin",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 67,
+      "fields": {
+        "name": "Peterbald",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 68,
+      "fields": {
+        "name": "Ragamuffin",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 69,
+      "fields": {
+        "name": "Toyger",
+        "animal": 2
+      }
+    },
+    {
+      "model": "contacts.breed",
+      "pk": 70,
+      "fields": {
+        "name": "Bambino",
+        "animal": 2
+      }
     }
 ]
