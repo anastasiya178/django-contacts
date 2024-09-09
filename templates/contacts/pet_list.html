@@ -2,12 +2,7 @@
 {% load auth_extras %}
 {% block content %}
     <h2>Pets</h2>
-    <div class="input-group">
-        <form method="get">
-            {{ filter.form.as_p }}
-            <button type="submit" class="btn btn-outline-primary">Search</button>
-        </form>
-    </div>
+    {% include "contacts/form_filter_list.html" %}
     {% if filter.qs %}
         <table class="table">
             <th>Record ID</th>
