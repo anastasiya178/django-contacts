@@ -1,77 +1,105 @@
-##### Contacts Django
-
-Using the app you can add and remove the contacts using the UI, as well the API and the Django 
-admin.
+# Contacts Django
 
 Table of Contents:
+- Description
 - Installation Guide
 - Linters
 - How to login to Docker web container shell
 
-###### Installation guide
+
+## Description
+This project helps to explore various features of Django, DRF, Docker and other tools. 
+I gradually add more features based on my current interest and time availability.
+
+Initial idea: Using the app you can add and remove the contacts using the UI, as well the API and the Django 
+admin.
+
+Below you can find the tools used and main features within it. 
+
+Django:
+- roles and users
+- admin customization
+- templates
+
+Docker:
+- containerize the app
+- use Postgres image to run Postgres using docker-compose instead of local installation
+- use docker-compose for web and DB containers
+
+Django REST Framework (DRF):
+- create CRUD endpoints
+
+## Installation guide
 
 1. Clone the project from github:
  https://github.com/anastasiya178/django-contacts.git
 
-2. Build docker compose by executing this command: 
+2. Create a .env file (TBD)
 
-`~ django-contacts % docker-compose build
-`
+3. Build docker compose by executing this command: 
 
-3. Run docker-compose by executing this command:
+``` 
+~ django-contacts % docker-compose build
+```
 
-`~ django-contacts % docker-compose up`
+4. Run docker-compose by executing this command:
+
+```
+~ django-contacts % docker-compose up
+```
 
 If the services are up and running, you would see the following 
 message in the terminal: 
 
-`Django version 4.1.2, using settings 'contacts_project.settings'
+```
+Django version 4.1.2, using settings 'contacts_project.settings
 Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.`
+Quit the server with CONTROL-C.
+```
 
 
+5. Follow http://0.0.0.0:8000/
 
-4. Follow http://0.0.0.0:8000/
+6. If you can see the table with contacts - the app is successfully installed!
+<img width="1331" alt="image" src="https://github.com/user-attachments/assets/5daafb14-0ba8-4b7f-8212-ba6adc919c85">
 
-5. If you can see the table with contacts - the app is successfully installed!
 
-6. In order to use edit mode, you would need to create a superuser: 
+7. In order to use edit mode, you would need to create a superuser: 
 
-`~ django-contacts % docker-compose run web /bin/bash`
+```
+~ django-contacts % docker-compose run web /bin/bash
+```
 
-In the opened shell: 
+In the opened shell execute the following command:
 
-`root@9dbfa2f99657:/django-contacts# 
-`
-execute the following command:
-
-`python manage.py createsuperuser
-`
+```
+root@9dbfa2f99657:/django-contacts#  python manage.py createsuperuser
+```
 Insert username, email (optional), password of your choice:
 
 Now you can login to the Django admin: http://0.0.0.0:8000/admin/
-and be able to edit the contacts or create additional users (see #6 for Role 
+and be able to edit the contacts or create additional users (see #* for Role 
 management).
 
-6. Role management is handled the following way:
+8. Role management is handled the following way:
     - group Admin (can view, create, delete Contact model)
     - group Editor (can view, delete Contact model)
     - group Viewer (can view Contact model)
 
-One of these groups needs to be assigned to a user in order to meet the following project requirements:
-    > Enforces that actions can only be performed by authenticated users with a certain roles:
-        o	One role that has read-only access (Viewer group permissions)
-        o	Another role that can read/add (Editor group permissions)
-        o	Another role that can read/add/delete (Admin group permissions, superuser permissions)
+One of these groups needs to be assigned to a newly created user.
 
-8. Run tests:
+9. Run tests:
 - login to Docker web container shell
 
-`~ django-contacts % docker-compose run web /bin/bash`
+```
+~ django-contacts % docker-compose run web /bin/bash
+```
 
-`python manage.py test`
+```
+~ django-contacts % python manage.py test
+```
 
-###### Linters used: 
+## Linters used: 
 See the list of linters used on the project:
 
 1. [Pylint](https://docs.pylint.org/) is a tool that checks for errors in Python code, tries to enforce a coding standard 
@@ -79,7 +107,7 @@ and looks for bad code smells.
 
 2. [flake8](https://flake8.pycqa.org/) is a tool for style guide enforcement.
 
-###### How to login to Docker web container shell
+### How to login to Docker web container shell
 
 `~ django-contacts % docker-compose run web /bin/bash`
 
