@@ -16,6 +16,7 @@
         {% else %}
             <li class="nav-item"><a class="nav-link" href={% url 'admin:index' %}>Login</a></li>
         {% endif %}
+        <li class="nav-item"><a class="nav-link" href={% url 'contacts:pets' %}>Pets</a></li>
         </ul>
     </nav>
     {% block content %}
