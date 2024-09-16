@@ -29,9 +29,9 @@ class Pet(models.Model):
     gender = models.CharField(choices=MALE_OR_FEMALE, default="Unknown")
     dob = models.DateField()
     color = models.CharField(max_length=255, default=None)
-    owner = models.ForeignKey("Contact", on_delete=models.CASCADE)
-    animal = models.ForeignKey("Animal", on_delete=models.CASCADE)
-    breed = models.ForeignKey("Breed", on_delete=models.CASCADE)
+    owner = models.ForeignKey("contacts.Contact", on_delete=models.CASCADE)
+    animal = models.ForeignKey("contacts.Animal", on_delete=models.CASCADE)
+    breed = models.ForeignKey("contacts.Breed", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name}, {self.animal}"
@@ -48,7 +48,7 @@ class Animal(models.Model):
 class Breed(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    animal = models.ForeignKey("Animal", on_delete=models.CASCADE)
+    animal = models.ForeignKey("contacts.Animal", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
