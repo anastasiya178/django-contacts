@@ -98,13 +98,13 @@ WSGI_APPLICATION = "contacts_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("POSTGRES_DATABASE"),
-        "USER": config("POSTGRES_USER"),
-        "PASSWORD": config("POSTGRES_PASSWORD"),
+        "NAME": config("RDS_POSTGRES_DB"),
+        "USER": config("RDS_POSTGRES_USER"),
+        "PASSWORD": config("RDS_POSTGRES_PASSWORD"),
         "HOST": config(
-            "POSTGRES_HOST"
+            "RDS_POSTGRES_HOST"
         ),  # if you run locally (without Docker) use '127.0.0.1', with Docker use 'db'?
-        "PORT": config("POSTGRES_DB_PORT"),
+        "PORT": config("RDS_POSTGRES_DB_PORT"),
         # 'OPTIONS': {
         #     'init_command': 'set default_storage_engine=INNODB',
         # },
