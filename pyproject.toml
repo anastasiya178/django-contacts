@@ -24,6 +24,7 @@ mysqlclient = "^2.2.4"
 psycopg2-binary = "^2.9.9"
 django-filter = "^24.3"
 drf-yasg = "^1.21.7"
+gunicorn = "^23.0.0"
 
 
 [build-system]
