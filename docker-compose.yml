@@ -13,8 +13,21 @@ services:
             python manage.py loaddata contacts/fixtures/animals.json &&
             python manage.py loaddata contacts/fixtures/breeds.json &&
             python manage.py loaddata contacts/fixtures/pets.json &&
-            python manage.py runserver 0.0.0.0:8000"
+            gunicorn contacts_project.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - .:/django-contacts/
     ports:
       - "8000:8000"
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - static_volume:/static/
+      - media_volume:/media/
+
+volumes:
+  static_volume:
+  media_volume:
